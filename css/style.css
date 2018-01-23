@@ -1,0 +1,137 @@
+body {
+  background-color: #737373;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.board {
+  text-align: center;
+  width: 1200px;
+}
+
+.board h1 {
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.board .create-column {
+  height: 50px;
+  width: 200px;
+  border-radius: 50px;
+  border: 1px #FFFFFF solid;
+  margin-bottom: 20px;
+  font-size: 20px;
+  transition: 1s;
+  background: linear-gradient(135deg, #737373 50%, transparent 50%);
+  background-position: 100% 0;
+  background-size: 500%;
+  background-color: #FFFFFF;
+}
+
+.board .create-column:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #FFFFFF;
+  background-position: 0 100%;
+}
+
+.column-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.column-container .column {
+  margin: 5px;
+  border: 2px solid #FFFFFF;
+  width: 200px;
+}
+
+.column-container .column h2 {
+  color: #FFFFFF;
+  margin: 0px;
+  padding: 10px;
+  border-bottom: 2px solid #000000;
+  font-size: 30px;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.column-container .column .btn-delete {
+  width: 20%;
+  height: 50px;
+  border-left: 2px solid #000000;
+}
+
+.column-container .column .btn-delete:hover {
+  color: #FFFFFF;
+  background-color: #b3b3b3;
+}
+
+.column-container .column .column-add-card {
+  width: 80%;
+  height: 50px;
+}
+
+.column-container .column .column-add-card:hover {
+  color: #FFFFFF;
+  background-color: #b3b3b3;
+}
+
+.column-container .column ul {
+  min-height: 200px;
+  border-top: 2px solid #000000;
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.column-container .column ul li {
+  min-height: 50px;
+  border: 2px solid #000000;
+  padding: 0;
+  margin: 5px;
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FFFFFF;
+}
+
+.column-container .column ul li:hover {
+  color: #FFFFFF;
+  background-color: #b3b3b3;
+}
+
+.column-container .column ul li .btn-delete {
+  height: auto;
+}
+
+.column-container .column ul li p {
+  width: 80%;
+}
+/*# sourceMappingURL=style.css.map */
