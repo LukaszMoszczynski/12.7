@@ -1,1 +1,1 @@
-# 12.7
+https://lukaszmoszczynski.github.io/12.7/
