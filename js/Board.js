@@ -8,18 +8,21 @@ var board = {
 };
 
 $('.create-column').click(function() {
-	var columnName = prompt('Wprowadź nazwę kolumny');
-	$.ajax({
-		url: baseUrl + '/column',
-		method: 'POST',
-		data: {
-			name: columnName
-		},
-		success: function(response) {
-			var column = new Column(response.id, columnName);
-			board.createColumn(column);
-		}
-	});
+	var columnName = prompt('Enter column name');
+	if ((columnName !== "") && (columnName !== null)) {
+			$.ajax({
+			url: baseUrl + '/column',
+			method: 'POST',
+			data: {
+				name: columnName
+			},
+			success: function(response) {
+				var column = new Column(response.id, columnName);
+				board.createColumn(column);
+			}
+		});
+	} else { alert('Please enter column name');
+	}	
 });
 	
 function initSortable() {
@@ -28,3 +31,5 @@ function initSortable() {
       placeholder: 'card-placeholder'
     }).disableSelection();
   }
+
+

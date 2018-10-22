@@ -9,9 +9,9 @@ function Column(id, name) {
 		// TWORZENIE NOWYCH WĘZŁÓW
 		var column = $('<div class="column"></div>');
 		var columnTitle = $('<h2 class="column-title">' + self.name + '</h2>');
-		var columnCardList = $('<ul class="card-list"></ul>');
 		var columnDelete = $('<button class="btn-delete">x</button>');
-		var columnAddCard = $('<button class="column-add-card">Dodaj kartę</button>');
+		var columnCardList = $('<ul class="card-list"></ul>');		
+		var columnAddCard = $('<button class="column-add-card">Add card</button>');
 		
 		// PODPINANIE ODPOWIEDNICH ZDARZEŃ POD WĘZŁY
 		columnDelete.click(function() {
@@ -19,26 +19,30 @@ function Column(id, name) {
 		});
 		
 		columnAddCard.click(function(event) {
-			var cardName = prompt("Wprowadź nazwę karty");
+			var cardName = prompt("Enter card name");
 			event.preventDefault();
-			$.ajax({
-				url: baseUrl + '/card',
-				method: 'POST',
-				data: {
-					name: cardName,
-					bootcamp_kanban_column_id: self.id
-				},
-				success: function(response)	{
-					var card = new Card(response.id, cardName);
-					self.createCard(card);
-				}
-			});
+			if ((cardName !== "") && (columnName !== null)) {
+				$.ajax({
+					url: baseUrl + '/card',
+					method: 'POST',
+					data: {
+						name: cardName,
+						bootcamp_kanban_column_id: self.id
+					},
+					success: function(response)	{
+						var card = new Card(response.id, cardName);
+						self.createCard(card);
+					}
+				});
+			} else {
+				alert('Please enter card name');
+			}			
 		});
 			
 			// KONSTRUOWANIE ELEMENTU KOLUMNY
-		column.append(columnTitle)			
-			.append(columnAddCard)
-			.append(columnDelete)
+		column.append(columnTitle)	
+			.append(columnDelete)		
+			.append(columnAddCard)	
 			.append(columnCardList);
 			return column;
 		}
@@ -58,3 +62,6 @@ Column.prototype = {
 	  });
 	}
 };
+
+
+

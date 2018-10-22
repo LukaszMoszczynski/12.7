@@ -8,16 +8,16 @@ function Card(id, name) {
 
 	function createCard() {
 		var card = $('<li class="card"></li>');
-		var cardDeleteBtn = $('<button class="btn-delete">x</button>');
+		var cardDeleteBtn = $('<button class="btn-deleteCard">x</button>');
 		var cardDescription = $('<p class="card-description"></p>');
 		
 		cardDeleteBtn.click(function(){
 			self.removeCard();
 		});		
-		card.append(cardDeleteBtn);
+		
 		cardDescription.text(self.name);
 		card.append(cardDescription);
-		card.append(cardDeleteBtn)
+		card.append(cardDeleteBtn);
 		return card;
 	}
 }
@@ -32,4 +32,4 @@ Card.prototype = {
 	  	}
 	  });
 	}
-}
+};
