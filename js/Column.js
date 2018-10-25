@@ -21,7 +21,7 @@ function Column(id, name) {
 		columnAddCard.click(function(event) {
 			var cardName = prompt("Enter card name");
 			event.preventDefault();
-			if ((cardName !== "") && (columnName !== null)) {
+			if ((cardName !== "") && (cardName !== null)) {
 				$.ajax({
 					url: baseUrl + '/card',
 					method: 'POST',
